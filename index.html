@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotchPotch - Shop various things in one place</title>
+
+    <!-- tailwindCSS & daisyUI  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="./script/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header Section  -->
+    <header class="px-10">
+      <div
+        class="flex items-center justify-between w-full max-w-7xl mx-auto py-5"
+      >
+        <div>
+          <div class="font-semibold text-2xl primary">
+            <a href="/">HotchPotch</a>
+          </div>
+        </div>
+        <nav>
+          <!-- Mobile nav  -->
+          <div class="md:hidden">
+            <div id="menu-btn">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div id="mobile-menu" class="hidden">
+              <ul class="flex flex-col gap-3 pt-3 md:hidden">
+                <li><a href="/">Home</a></li>
+                <li>Products</li>
+                <li>About</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+          </div>
+          <ul class="hidden md:flex items-center gap-16 font-medium">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>Products</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Banner Section -->
+    <section>
+      <div>
+        <img src="./assests/banner.jpg" alt="banner illustration" />
+      </div>
+    </section>
+    <section></section>
+    <footer></footer>
+  </body>
+</html>
