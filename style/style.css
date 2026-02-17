@@ -5,3 +5,23 @@
 .primary {
   color: rebeccapurple;
 }
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* For mobile menu items */
+.mobile-nav-link {
+  position: relative;
+}

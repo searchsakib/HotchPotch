@@ -5,74 +5,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HotchPotch - Shop various things in one place</title>
 
-    <!-- tailwindCSS & daisyUI  -->
+    <!-- tailwindCSS & daisyUI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
     />
 
-    <!-- font awesome  -->
+    <!-- font awesome 6 -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="./style/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <link rel="stylesheet" href="./style/style.css" />
     <script src="./script/script.js" defer></script>
   </head>
   <body>
-    <!-- Header Section  -->
-    <header class="px-10">
+    <!-- Header Section -->
+    <header class="px-4 md:px-10 sticky top-0 bg-white shadow-sm z-50">
       <div
-        class="flex items-center justify-between w-full max-w-7xl mx-auto py-5"
+        class="flex items-center justify-between w-full max-w-7xl mx-auto py-4"
       >
+        <!-- Logo -->
         <div>
-          <div class="font-semibold text-2xl primary">
+          <div class="font-semibold text-xl md:text-2xl text-[#302490]">
             <a href="/">HotchPotch</a>
           </div>
         </div>
-        <nav>
-          <!-- Mobile nav  -->
-          <div class="md:hidden">
-            <div id="menu-btn">
-              <i class="fa-solid fa-bars"></i>
-            </div>
-            <div id="mobile-menu" class="hidden">
-              <ul class="flex flex-col gap-3 pt-3 md:hidden">
-                <li><a href="/">Home</a></li>
-                <li>Products</li>
-                <li>About</li>
-                <li>Contact</li>
-              </ul>
-            </div>
-          </div>
-          <ul class="hidden md:flex items-center gap-16 font-medium">
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-8 lg:gap-16 font-medium">
             <li>
-              <a href="/">Home</a>
+              <a
+                href="/"
+                class="nav-link relative pb-1 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+                >Home</a
+              >
             </li>
-            <li>Products</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li
+              class="nav-link relative pb-1 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+            >
+              Products
+            </li>
+            <li
+              class="nav-link relative pb-1 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+            >
+              About
+            </li>
+            <li
+              class="nav-link relative pb-1 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
+            >
+              Contact
+            </li>
           </ul>
         </nav>
-        <div>
-          <i class="fa-solid fa-cart-shopping"></i>
+
+        <!-- Cart Icon & Mobile Menu Button -->
+        <div class="flex items-center gap-4">
+          <!-- Cart Icon -->
+          <div class="relative">
+            <i
+              class="fa-solid fa-cart-shopping text-xl cursor-pointer hover:text-blue-600 transition-all duration-300 hover:scale-110 cart-icon"
+            ></i>
+            <span
+              class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center"
+              >0</span
+            >
+          </div>
+
+          <!-- Hamburger Menu Button (Mobile) -->
+          <div class="md:hidden">
+            <button
+              id="menu-btn"
+              class="hamburger text-2xl focus:outline-none transition-all duration-300 hover:text-blue-600"
+            >
+              <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+            </button>
+          </div>
         </div>
       </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg"
+      >
+        <ul class="flex flex-col py-3 px-4 space-y-2">
+          <li>
+            <a
+              href="/"
+              class="mobile-nav-link block px-4 py-2 rounded-lg hover:bg-gray-100 hover:text-blue-600 transition-all duration-300 cursor-pointer font-medium"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="mobile-nav-link block px-4 py-2 rounded-lg hover:bg-gray-100 hover:text-blue-600 transition-all duration-300 cursor-pointer font-medium"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              class="mobile-nav-link block px-4 py-2 rounded-lg hover:bg-gray-100 hover:text-blue-600 transition-all duration-300 cursor-pointer font-medium"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="mobile-nav-link block px-4 py-2 rounded-lg hover:bg-gray-100 hover:text-blue-600 transition-all duration-300 cursor-pointer font-medium"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
+
     <!-- Banner Section -->
     <section>
-      <div>
-        <img src="./assests/banner.jpg" alt="banner illustration" />
+      <div
+        class="hero min-h-[70vh]"
+        style="background-image: url(./assests/banner.jpg)"
+      >
+        <div class="hero-overlay"></div>
+        <div
+          class="hero-content text-neutral-content grid grid-cols-1 md:grid-cols-2"
+        >
+          <div class="text-left">
+            <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
+            <p class="mb-5">
+              Discover the latest trends in fashion, electronics, and more.
+              <br />
+              Shop with confidence and style at HotchPotch
+            </p>
+            <button class="btn btn-primary">Shop Now</button>
+          </div>
+        </div>
       </div>
     </section>
-    <section></section>
-    <footer></footer>
+
+    <!-- Choose Us Section  -->
+    <section class="max-w-5xl mx-auto py-16">
+      <div class="text-center pb-7">
+        <h3 class="text-3xl font-semibold pb-3">Why Choose Us</h3>
+        <p class="text-gray-800">
+          We provide the best shopping experience with top-notch services
+        </p>
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"
+      >
+        <!-- card  -->
+        <div class="p-6 rounded-md shadow-sm bg-gray-50">
+          <div class="bg-[#a499fc24] inline-block p-2">
+            <i class="fa-solid fa-truck-fast text-[#302490]"></i>
+          </div>
+          <div class="mt-6 mb-2">
+            <h2 class="text-xl font-semibold tracking-wide">Fast Delivery</h2>
+          </div>
+          <p class="text-sm">
+            Get your orders delivered to your doorstep quickly and efficiently
+          </p>
+        </div>
+        <!-- card  -->
+        <div class="p-6 rounded-md shadow-sm bg-gray-50">
+          <div class="bg-[#a499fc24] inline-block p-2">
+            <i class="fa-solid fa-headset text-[#302490]"></i>
+          </div>
+          <div class="mt-6 mb-2">
+            <h2 class="text-xl font-semibold tracking-wide">24/7 Support</h2>
+          </div>
+          <p class="text-sm">
+            Our support team is available around the clock to assist you
+          </p>
+        </div>
+        <!-- card  -->
+        <div class="p-6 rounded-md shadow-sm bg-gray-50">
+          <div class="bg-[#a499fc24] inline-block p-2">
+            <i class="fa-solid fa-shield text-[#302490]"></i>
+          </div>
+          <div class="mt-6 mb-2">
+            <h2 class="text-xl font-semibold tracking-wide">Secure Payment</h2>
+          </div>
+          <p class="text-sm">
+            Experience safe and secure payment transactions with our encrypted
+            payment systems
+          </p>
+        </div>
+        <!-- card  -->
+        <div class="p-6 rounded-md shadow-sm bg-gray-50">
+          <div class="bg-[#a499fc24] inline-block p-2">
+            <i class="fa-solid fa-arrow-rotate-left text-[#302490]"></i>
+          </div>
+          <div class="mt-6 mb-2">
+            <h2 class="text-xl font-semibold tracking-wide">Easy Returns</h2>
+          </div>
+          <p class="text-sm">
+            Not satisfied? return your products easily within 30 days
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
