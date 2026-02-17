@@ -1,2 +1,3 @@
 # HotchPotch
-E-commerce site for different products
+
+E-commerce site for various products
